@@ -11,7 +11,7 @@ const AddScorePopup = () => {
   const normalizeTime = (time: string) => {
     let [minutes, seconds, milliseconds] = time.split(':').map(Number);
 
-    // Normalize the seconds and minutes
+  
     if (seconds >= 60) {
       minutes += Math.floor(seconds / 60);
       seconds = seconds % 60;
@@ -55,7 +55,7 @@ const AddScorePopup = () => {
           placeholder="MM:SS:MS"
           value={time}
           onChange={handleTimeChange}
-          maxLength={8} // MM:SS:MS format length
+          maxLength={8} 
         />
         <button onClick={handleSubmit}>Add Score</button>
        

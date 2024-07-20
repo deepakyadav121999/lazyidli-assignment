@@ -303,3 +303,30 @@ align-items: center;
   align-items: center;
   justify-content: center;
 }
+.scroll_thing {
+  width: 98%;
+  height: 90vh; 
+  display: flex;
+  flex-direction: column;
+overflow-x: hidden;
+overflow-y: scroll;
+
+align-items: center;
+gap: 4px;
+}
+
+
+.animate-new {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

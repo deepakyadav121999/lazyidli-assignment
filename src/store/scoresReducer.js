@@ -11,13 +11,22 @@ const initialState = {
     { username: 'Muhammed Anjum Kunnummal', time: '00:56:23', amount: 0 },
     { username: 'Muhammed Anjum Kunnummal', time: '00:56:23', amount: 0 },
   ],
+  allScores: [
+   
+  ],
+  loadedCount: 10, 
 };
 
 const ADD_SCORE = 'ADD_SCORE';
+const LOAD_MORE_SCORES = 'LOAD_MORE_SCORES';
 
 export const addScore = (score) => ({
   type: ADD_SCORE,
   payload: score,
+});
+
+export const loadMoreScores = () => ({
+  type: LOAD_MORE_SCORES,
 });
 
 const parseTime = (time) => {
@@ -35,9 +44,20 @@ const scoresReducer = (state = initialState, action) => {
         else if (index === 1) score.amount = 5000;
         else if (index === 2) score.amount = 500;
         else score.amount = 0;
+        score.rank = index + 1; 
       });
-      if (updatedScores.length > 10) updatedScores.pop();
       return { ...state, scores: updatedScores };
+    case LOAD_MORE_SCORES:
+      const moreScores = state.allScores.slice(
+        state.loadedCount,
+        state.loadedCount + 10
+      );
+      const newScores = [...state.scores, ...moreScores];
+      return {
+        ...state,
+        scores: newScores,
+        loadedCount: state.loadedCount + moreScores.length,
+      };
     default:
       return state;
   }
