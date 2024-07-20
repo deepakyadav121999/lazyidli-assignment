@@ -1,0 +1,273 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app {
+  width:98.7vw;
+
+  background-color: #fff;
+
+ overflow: hidden;
+  border-radius: 8px;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+gap: 6px;
+ 
+  background: url('./components/background.png') no-repeat center center;
+  background-size: cover;
+ align-items: center;
+  border-radius: 5px;
+  color: white;
+
+  
+}
+
+.leaderboard h2 {
+  text-align: center;
+}
+
+.grid-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 7px;
+  font-weight: bold;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.5); 
+  align-items: center;
+  font-weight: 700;
+  color: rgb(221, 163, 16);
+}
+
+.score-entry {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+  padding: 5px;
+  border: 0.1px solid #5a5757;
+  border-bottom-right-radius: 5% 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  font-weight: 700;
+  height: 30px;
+}
+
+.score-entry.top-one {
+  background-color: rgb(216, 195, 78) !important;
+  color: black;
+}
+
+.score-entry.top-two {
+  background-color: rgb(181, 181, 181) !important;
+  color: black;
+}
+
+.score-entry.top-three {
+  background-color: #f18c3f !important; 
+}
+
+.score-entry.other-entries {
+  background-color: rgba(0, 0, 0, 0.5) !important; 
+}
+
+.add-score-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+
+}
+
+.footer {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+  animation: scrollFooter 15s linear infinite;
+}
+
+@keyframes scrollFooter {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.bg {
+  background-color: transparent;
+}
+.rank{
+
+  width: 100%;
+ 
+}
+.alarm{
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.num{
+background: white;
+color: black;
+width: 25px;
+text-align: center;
+padding: 3px;
+border-bottom-right-radius: 30% 30%;
+border: 0.1px solid rgb(48, 47, 47);
+}
+.header{
+  background-color: black;
+padding-left: 40px;
+padding-right: 20px;
+padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: sticky;
+  top: 0; */
+ 
+}
+.inside_header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+
+ 
+}
+.p_tag{
+  height: 0.5px;
+}
+.img_header{
+  width: 100%;
+  height: 70px;
+}
+.cnt{
+  padding: 2px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.flex-cnt{
+  width: 80%;
+  display: flex;
+ 
+}
+.p_tag1{
+  font-weight: 900;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 723px) {
+  .score-entry {
+    
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .grid-header{
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .p_tag1,.p_tag{
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .headaer_image{
+    height: 40px;
+    width: 55px;
+  }
+  .img_header{
+
+    width: 100%;
+    height: 40px;
+    image-rendering: pixelated;
+
+  }
+}
+@media only screen and (max-width: 723px) {
+  .score-entry {
+    
+    font-size: 8px;
+  }
+  .grid-header{
+    font-size: 8px;
+  }
+  .p_tag1,.p_tag{
+    font-size: 8px;
+  }
+}
+.add_btn{
+  height: 40px;
+  background-color: rgb(34, 34, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close_menu{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.add_btn>button{
+  padding: 7px;
+  width: 40%;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}

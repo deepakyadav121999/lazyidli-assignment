@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Leaderboard from './components/Leaderboard';
+import AddScorePopup from './components/AddScorePopup';
+import Footer from './components/Footer';
+import { useSelector, useDispatch } from 'react-redux';
+import { showAddScorePopup } from './store/uiReducer';
+import Header from './components/Header';
+const App = () => {
+  const isAddScorePopupVisible = useSelector(
+    (state) => state.ui.isAddScorePopupVisible
+  );
+  const dispatch = useDispatch();
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      
+      <Header/>
+    
+     
+      <div  className='add_btn'>
+      <button onClick={() => dispatch(showAddScorePopup())} >
+        Add Score
+      </button>
+      </div>
+     
+      <Leaderboard />
+      {isAddScorePopupVisible && <AddScorePopup />}
+    
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
