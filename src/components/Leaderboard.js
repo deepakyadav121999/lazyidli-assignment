@@ -11,7 +11,7 @@ const Leaderboard = () => {
 
   useEffect(() => {
     if (scores.length > 0) {
-      setRecentScore(scores[scores.length - 1]); 
+      setRecentScore(scores[0]); 
     }
   }, [scores]);
 
