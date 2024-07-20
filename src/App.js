@@ -19,7 +19,7 @@ const App = () => {
      
       <div  className='add_btn'>
       <button onClick={() => dispatch(showAddScorePopup())} >
-        Add Score
+        Add New Score
       </button>
       </div>
      
